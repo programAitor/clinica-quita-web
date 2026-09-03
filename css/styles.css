@@ -46,19 +46,24 @@ nav a:hover, nav a.active {
 
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(rgba(0,119,182,0.05), rgba(0,119,182,0.1));
+    padding: 100px 20px;
+    /* Filtro oscuro translúcido + imagen de inicio */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* El texto del hero sí debe ser blanco porque está sobre la foto oscura */
 .hero h1 {
     font-size: 38px;
-    color: #0077b6;
+    color: white !important;
     margin-bottom: 15px;
 }
 
 .hero p {
     font-size: 18px;
-    color: #666;
+    color: white !important;
     margin-bottom: 25px;
 }
 
@@ -81,18 +86,23 @@ nav a:hover, nav a.active {
     margin: 0 auto;
 }
 
+/* Tarjetas con fondo blanco casi opaco y texto oscuro legible */
 .card {
-    background: white;
+    background: rgba(255, 255, 255, 0.95) !important;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     flex: 1;
     text-align: center;
 }
 
 .card h3 {
-    color: #0077b6;
+    color: #0077b6 !important;
     margin-bottom: 10px;
+}
+
+.card p {
+    color: #333333 !important;
 }
 
 footer {
@@ -102,45 +112,4 @@ footer {
     color: white;
     font-size: 14px;
     margin-top: 40px;
-}
-
-/* --- ESTILOS GENERALES PARA QUE EL TEXTO SE VEA BIEN SOBRE CUALQUIER FOTO --- */
-.hero h1, .hero p, .card h3, .card p {
-    /* Esto asegura que el texto sea blanco por defecto para contrastar con las fotos oscurecidas */
-    color: white !important; 
-}
-
-.card {
-    /* Mantenemos las tarjetas blancas, pero les damos algo de transparencia para que se trasluzca el fondo */
-    background: rgba(255, 255, 255, 0.85) !important; 
-}
-
-/* --- IMAGEN DE FONDO PARA LA PÁGINA DE INICIO (INDEX.HTML) --- */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    /* Filtro oscuro translúcido + tu imagen de inicio */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-inicio.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Esto hace un efecto 'parallax' muy chulo al hacer scroll */
-}
-
-/* --- IMAGEN DE FONDO PARA LA PÁGINA DE SERVICIOS (SERVICIOS.HTML) --- */
-/* Al ser una clase diferente, podemos poner otra foto distinta */
-.features {
-    /* Filtro oscuro translúcido + tu imagen de servicios */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/servicios-fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    /* Ajustamos el padding para que no se pegue al footer */
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-/* --- ASEGURAR QUE EL FOOTER NO SE VEA AFECTADO POR EL FONDO GENERAL --- */
-footer {
-    background-color: #333; /* El footer se queda oscuro normal */
-    margin-top: 0;
 }
